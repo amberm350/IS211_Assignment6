@@ -1,5 +1,8 @@
 from conversions import *
 
+class ConversionError(Exception):
+    pass
+
 def convert(from_units, to_units, value):
 
     from_lcase = from_units.lower()
@@ -10,12 +13,14 @@ def convert(from_units, to_units, value):
     elif from_lcase == 'celsius' and to_lcase == "fahrenheit":
         return convertCelsiusToFahrenheit(value)
     elif from_lcase == 'fahrenheit' and to_lcase == "celsius":
-        return convertCelsiusToFahrenheit(value)
+        return convertFahrenheitToCelsius(value)
     elif from_lcase == 'fahrenheit' and to_lcase == "kelvin":
-        return convertCelsiusToFahrenheit(value)
+        return convertFahrenheitToKelvin(value)
     elif from_lcase == 'kelvin' and to_lcase == "celsius":
-        return convertCelsiusToFahrenheit(value)
+        return convertKelvinToCelsius(value)
     elif from_lcase == 'kelvin' and to_lcase == "fahrenheit":
-        return convertCelsiusToFahrenheit(value)
+        return convertKelvinToFahrenheit(value)
     elif from_lcase == "miles" and to_lcase == "meters":
         return converMilesToMeters(value)
+    else:
+        raise ("Unable to process Conversion")

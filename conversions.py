@@ -24,6 +24,6 @@ def convertKelvinToFahrenheit(kelvin):
     return fahrenheit 
 
 def converMilesToMeters(miles):
-    result = 0
+    result = miles * 1609.344
     return result
     

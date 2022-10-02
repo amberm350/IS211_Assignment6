@@ -158,12 +158,12 @@ class test_temperature(unittest.TestCase):
 
         fahrenheit = 10
         result = convert("Fahrenheit", "Celsius", fahrenheit)
-        expected = -12.2222
+        expected = -12.222222222222221
         self.assertAlmostEqual(result, expected)
 
         fahrenheit = 10
         result = convert("Fahrenheit", "Kelvin", fahrenheit)
-        expected = 260.928
+        expected = 260.92777777777775
         self.assertAlmostEqual(result, expected)
 
         kelvin = 14
@@ -173,7 +173,7 @@ class test_temperature(unittest.TestCase):
 
         kelvin = 14
         result = convert("Kelvin", "Fahrenheit", kelvin)
-        expected = -434.47
+        expected = -434.46999999999997
         self.assertEqual(result, expected)
 
         miles= 25
